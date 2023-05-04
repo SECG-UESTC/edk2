@@ -171,7 +171,7 @@ RampOpenAperture (
     }
 
     DEBUG ((
-      DEBUG_INFO,
+      DEBUG_VERBOSE,
       "%a: Memory = 0x%lx, MemType = %a\n",
       __func__,
       MemRangeAddr,
@@ -221,7 +221,7 @@ RampOpenAperture (
   ApertInfo->Ripas            = RipasEmpty;
 
   DEBUG ((
-    DEBUG_INFO,
+    DEBUG_VERBOSE,
     "%a: ApertRef = 0x%p, Memory = 0x%lx, Pages = 0x%x, "
     "MemoryAttributes = 0x%x, Ripas = 0x%x\n",
     __func__,
@@ -252,7 +252,7 @@ RampOpenAperture (
   }
 
   DEBUG ((
-    DEBUG_INFO,
+    DEBUG_VERBOSE,
     "SUCCESS: RSI Set IPA State complete, Address = %p, Pages = 0x%lx, "
     "Status = %r\n",
     Memory,
@@ -321,7 +321,7 @@ RampCloseAperture (
   }
 
   DEBUG ((
-    DEBUG_INFO,
+    DEBUG_VERBOSE,
     "%a: ApertRef = 0x%p, Memory = 0x%lx, Pages = 0x%x, "
     "MemoryAttributes = 0x%x, Ripas = 0x%x\n",
     __func__,
