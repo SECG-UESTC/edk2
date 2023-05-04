@@ -9,7 +9,9 @@
 
 #include <Uefi.h>
 #include <Pi/PiMultiPhase.h>
+#include <Library/ArmCcaLib.h>
 #include <Library/ArmLib.h>
+#include <Library/ArmMmuLib.h>
 #include <Library/BaseMemoryLib.h>
 #include <Library/DebugLib.h>
 #include <Library/HobLib.h>
@@ -26,6 +28,10 @@
 //
 #define MACH_VIRT_PERIPH_BASE  0x08000000
 #define MACH_VIRT_PERIPH_SIZE  SIZE_128MB
+//
+// The remaining is mapped lazily, but we need to register the memory
+// attributes now if we're a Realm.
+#define MACH_VIRT_LOWIO_SIZE   (SIZE_1GB - MACH_VIRT_PERIPH_BASE)
 
 // The PCIe and extra redistributor regions are placed after DRAM. These
 // definitions are only correct with less than 256GiB of RAM. Otherwise they are
