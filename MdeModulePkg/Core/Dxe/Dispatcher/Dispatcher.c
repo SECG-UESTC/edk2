@@ -450,7 +450,7 @@ CoreDispatcher (
       // skip the LoadImage
       //
       if ((DriverEntry->ImageHandle == NULL) && !DriverEntry->IsFvImage) {
-        DEBUG ((DEBUG_INFO, "Loading driver %g\n", &DriverEntry->FileName));
+        DEBUG ((DEBUG_VERBOSE, "Loading driver %g\n", &DriverEntry->FileName));
         Status = CoreLoadImage (
                    FALSE,
                    gDxeCoreImageHandle,

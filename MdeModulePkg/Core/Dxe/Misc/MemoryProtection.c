@@ -200,7 +200,7 @@ SetUefiImageMemoryAttributes (
 
   FinalAttributes = (Descriptor.Attributes & EFI_CACHE_ATTRIBUTE_MASK) | (Attributes & EFI_MEMORY_ATTRIBUTE_MASK);
 
-  DEBUG ((DEBUG_INFO, "SetUefiImageMemoryAttributes - 0x%016lx - 0x%016lx (0x%016lx)\n", BaseAddress, Length, FinalAttributes));
+  DEBUG ((DEBUG_VERBOSE, "SetUefiImageMemoryAttributes - 0x%016lx - 0x%016lx (0x%016lx)\n", BaseAddress, Length, FinalAttributes));
 
   ASSERT (gCpu != NULL);
   gCpu->SetMemoryAttributes (gCpu, BaseAddress, Length, FinalAttributes);
@@ -337,8 +337,8 @@ ProtectUefiImage (
   EFI_STATUS               Status;
   UINT32                   RequiredAlignment;
 
-  DEBUG ((DEBUG_INFO, "ProtectUefiImageCommon - 0x%x\n", LoadedImage));
-  DEBUG ((DEBUG_INFO, "  - 0x%016lx - 0x%016lx\n", (EFI_PHYSICAL_ADDRESS)(UINTN)LoadedImage->ImageBase, LoadedImage->ImageSize));
+  DEBUG ((DEBUG_VERBOSE, "ProtectUefiImageCommon - 0x%x\n", LoadedImage));
+  DEBUG ((DEBUG_VERBOSE, "  - 0x%016lx - 0x%016lx\n", (EFI_PHYSICAL_ADDRESS)(UINTN)LoadedImage->ImageBase, LoadedImage->ImageSize));
 
   if (gCpu == NULL) {
     return;

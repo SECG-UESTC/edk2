@@ -35,7 +35,7 @@ PeCoffLoaderRelocateImageExtraAction (
  #ifdef __GNUC__
   if (ImageContext->PdbPointer) {
     DEBUG ((
-      DEBUG_LOAD | DEBUG_INFO,
+      DEBUG_VERBOSE | DEBUG_INFO,
       "add-symbol-file %a 0x%p\n",
       ImageContext->PdbPointer,
       (UINTN)(ImageContext->ImageAddress + ImageContext->SizeOfHeaders)
@@ -46,7 +46,7 @@ PeCoffLoaderRelocateImageExtraAction (
  #endif
 
   DEBUG ((
-    DEBUG_LOAD | DEBUG_INFO,
+    DEBUG_VERBOSE | DEBUG_INFO,
     "Loading driver at 0x%11p EntryPoint=0x%11p\n",
     (VOID *)(UINTN)ImageContext->ImageAddress,
     FUNCTION_ENTRY_POINT (ImageContext->EntryPoint)
@@ -72,7 +72,7 @@ PeCoffLoaderUnloadImageExtraAction (
  #ifdef __GNUC__
   if (ImageContext->PdbPointer) {
     DEBUG ((
-      DEBUG_LOAD | DEBUG_INFO,
+      DEBUG_VERBOSE | DEBUG_INFO,
       "remove-symbol-file %a 0x%08x\n",
       ImageContext->PdbPointer,
       (UINTN)(ImageContext->ImageAddress + ImageContext->SizeOfHeaders)
@@ -83,7 +83,7 @@ PeCoffLoaderUnloadImageExtraAction (
  #endif
 
   DEBUG ((
-    DEBUG_LOAD | DEBUG_INFO,
+    DEBUG_VERBOSE | DEBUG_INFO,
     "Unloading driver at 0x%11p\n",
     (VOID *)(UINTN)ImageContext->ImageAddress
     ));
