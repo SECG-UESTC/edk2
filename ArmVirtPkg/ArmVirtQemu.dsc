@@ -98,6 +98,7 @@
   ArmPlatformLib|ArmVirtPkg/Library/ArmPlatformLibQemu/ArmPlatformLibQemu.inf
   ArmCcaLib|ArmVirtPkg/Library/ArmCcaLib/ArmCcaLib.inf
   ArmCcaRsiLib|ArmVirtPkg/Library/ArmCcaRsiLib/ArmCcaRsiLib.inf
+  BlobVerifierLib|ArmVirtPkg/Library/BlobVerifierLibArmCca/BlobVerifierLibArmCca.inf
 
 [LibraryClasses.ARM]
   ArmPlatformLib|ArmPlatformPkg/Library/ArmPlatformLibNull/ArmPlatformLibNull.inf
@@ -502,7 +503,11 @@
   }
   OvmfPkg/QemuKernelLoaderFsDxe/QemuKernelLoaderFsDxe.inf {
     <LibraryClasses>
+!if $(ARCH) == AARCH64
+      NULL|ArmVirtPkg/Library/BlobVerifierLibArmCca/BlobVerifierLibArmCca.inf
+!else
       NULL|OvmfPkg/Library/BlobVerifierLibNull/BlobVerifierLibNull.inf
+!endif
   }
 
   #
