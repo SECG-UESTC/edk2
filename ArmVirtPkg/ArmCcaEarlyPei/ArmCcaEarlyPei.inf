@@ -1,0 +1,33 @@
+## @file
+#  Setup the RAM address range early in the PEI phase.
+#
+#  Copyright (c) 2022, Arm Limited. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x0001001B
+  BASE_NAME                      = ArmCcaEarlyPei
+  FILE_GUID                      = E12BA914-2F9C-4808-A2FD-E7B0EA5EC247
+  MODULE_TYPE                    = PEIM
+  VERSION_STRING                 = 1.0
+
+  ENTRY_POINT                    = ArmCcaEarlyPei
+
+[Sources]
+  ArmCcaEarlyPei.c
+
+[LibraryClasses]
+  PeimEntryPoint
+  DebugLib
+  ArmCcaInitPeiLib
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ArmVirtPkg/ArmVirtPkg.dec
+
+[Depex]
+  # TODO
+  TRUE
