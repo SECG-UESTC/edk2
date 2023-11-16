@@ -49,6 +49,11 @@ RsiCmdStatusToEfiStatus (
   )
 {
   switch (RsiCommandReturnCode) {
+    /* TODO: when running in the host, RSI is not available. Find out how to probe
+     * this reliably.
+     */
+    case 0xFFFFFFFFFFFFFFFF:
+      return RETURN_ABORTED;
     case RSI_SUCCESS:
       return RETURN_SUCCESS;
     case RSI_ERROR_INPUT:
