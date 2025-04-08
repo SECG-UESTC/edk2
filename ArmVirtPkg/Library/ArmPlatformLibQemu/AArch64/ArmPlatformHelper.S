@@ -42,7 +42,7 @@
 
  .set    RSI_VERSION,         0xC4000190
  .set    RSI_REALM_CONFIG,    0xC4000196
- .set    RSI_MIN_VERSION,     0x00010000  /* Version 1.0 */
+ .set    RSI_MIN_VERSION,     0x00010001  /* Version 1.1 */
 
   /*
    * In a Realm, the UART needs to be accessed via unprotected IPA range. Detect

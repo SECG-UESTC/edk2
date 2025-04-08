@@ -27,7 +27,7 @@
 
 /** The version of RSI specification implemented by this module.
 */
-STATIC CONST UINT32  mRsiImplVersion = RMM_VERSION (1, 0);
+STATIC CONST UINT32  mRsiImplVersion = RMM_VERSION (1, 1);
 
 /**
   Convert the RSI status code to EFI Status code.
