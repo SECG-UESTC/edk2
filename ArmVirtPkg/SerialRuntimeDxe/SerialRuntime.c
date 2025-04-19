@@ -48,7 +48,7 @@ SerialPortInitialize (
 
   UartBase = GET_GUID_HOB_DATA (Hob);
 
-  SerialBaseAddress = (UINTN)UartBase->ConsoleAddress;
+  SerialBaseAddress = (UINTN)UartBase->DebugAddress;
   if (SerialBaseAddress == 0) {
     Status = RETURN_NOT_FOUND;
     goto Failed;
