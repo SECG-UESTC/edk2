@@ -1826,6 +1826,23 @@ EFI_STATUS
   );
 
 //
+//Serial Runtime service
+//
+typedef
+EFI_STATUS
+(EFIAPI *EFI_SERIAL_RUNTIME_WRITE)(
+  IN UINT8 *Buffer,
+  IN UINTN NumberOfBytes
+  );
+
+typedef
+EFI_STATUS
+(EFIAPI *EFI_SERIAL_RUNTIME_READ)(
+  OUT UINT8 *Buffer,
+  IN UINTN NumberOfBytes
+  );
+
+//
 // Firmware should stop at a firmware user interface on next boot
 //
 #define EFI_OS_INDICATIONS_BOOT_TO_FW_UI                    0x0000000000000001
@@ -1904,6 +1921,12 @@ typedef struct {
   // Miscellaneous UEFI 2.0 Service
   //
   EFI_QUERY_VARIABLE_INFO           QueryVariableInfo;
+
+  //
+  //Serial Service
+  //
+  EFI_SERIAL_RUNTIME_WRITE                  SerialWrite;
+  EFI_SERIAL_RUNTIME_READ                   SerialRead;
 } EFI_RUNTIME_SERVICES;
 
 #define EFI_BOOT_SERVICES_SIGNATURE  SIGNATURE_64 ('B','O','O','T','S','E','R','V')

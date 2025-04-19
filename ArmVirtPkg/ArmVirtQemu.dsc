@@ -391,6 +391,7 @@
     <LibraryClasses>
       PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
   }
+  
 
   #
   # Architectural Protocols
@@ -625,3 +626,7 @@
   # IoMMU support for Arm CCA
   #
   ArmVirtPkg/ArmCcaIoMmuDxe/ArmCcaIoMmuDxe.inf
+  
+  
+  ArmVirtPkg/SerialRuntimeDxe/SerialRuntime.inf
+
