@@ -112,6 +112,7 @@ READ_LOCK_STATUS   = TRUE
   INF ArmVirtPkg/MemoryInitPei/MemoryInitPeim.inf
   INF ArmPkg/Drivers/CpuPei/CpuPei.inf
   INF MdeModulePkg/Core/DxeIplPeim/DxeIpl.inf
+  INF ArmVirtPkg/SerialRuntimeDxe/SerialRuntime.inf
 
 !if $(TPM2_ENABLE) == TRUE
   INF MdeModulePkg/Universal/PCD/Pei/Pcd.inf

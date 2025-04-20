@@ -625,3 +625,5 @@
   # IoMMU support for Arm CCA
   #
   ArmVirtPkg/ArmCcaIoMmuDxe/ArmCcaIoMmuDxe.inf
+
+  ArmVirtPkg/SerialRuntimeDxe/SerialRuntime.inf
